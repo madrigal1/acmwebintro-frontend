@@ -1,60 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 
-body {
-    font-family: 'Playfair Display', serif;
-    overflow: hidden;
-}
-#logo {
-    grid-area: logo;
-   /*  background-color: rgb(253, 253, 5); */
-    text-align:center;
-}
-#logo img {
-    transform: translateY(20%);
-}
 
-#x {
-    grid-area: x;
-    font-style: italic;
-    font-weight: bold;
-    color:black;
-    text-align: center;
-    padding: 20% 20% 20% 0%;
-    font-size: 1.2em;
-   /*  background-color: rgb(28, 93, 151); */
-
-}
-
-#name {
-    grid-area: name;
-   /*  background-color: rgb(66, 12, 44);   */
-    font-style: italic;
-    text-align:center;
-    padding-top:12%;
-    padding-right: 50%;
-}
-
-
-#year {
-    grid-area: year;
-    /* background-color: rgb(255, 78, 184); */
-    text-align: center;
-    padding-top: 12%;
-}
-
-#header {
-    display: grid;
-    height:50px;
-    width:100%;
-    align-content: center;
-    justify-content: center;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: auto;
-    grid-template-areas: 
-    /* "logo logo  x x name name . . . . year year"; */
-    "logo x name name . . . . . . year year";
-}
 
 /* boxes */
 #blackmain {

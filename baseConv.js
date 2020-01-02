@@ -1,6 +1,8 @@
 window.onload = ()=> {
-    const convertor = (dec,base)=> {
-        return Number(dec).toString(base).toUpperCase();
+    const getAns = async (url,settings) => {
+        const response = await fetch(url,settings);
+        const data = await response.json();
+        return data;
     }
     let input = document.querySelector("#mainbase input");
     let bin = document.querySelector("#binary div");
@@ -14,10 +16,18 @@ window.onload = ()=> {
     input.addEventListener("keyup",(e)=>{
         e.which = e.which|e.keyCode;
         if(e.which == 13) {
-            console.log(convertor(e.target.value,2));
-            bin.innerHTML =  convertor(e.target.value,2);
-            octal.innerHTML = convertor(e.target.value,8);
-            hexa.innerHTML = convertor(e.target.value,16);
+            let url = `https://acmgokulintro.herokuapp.com/api/baseConv?value=${e.target.value}`;
+            let settings = {
+               method: 'GET'
+            };
+           getAns(url,settings)
+             .then(ans=> {
+                bin.innerHTML = ans.binary;
+                octal.innerHTML = ans.octal;
+                hexa.innerHTML = ans.hexadecimal;
+               }
+             );
+          
         }
     });
 }

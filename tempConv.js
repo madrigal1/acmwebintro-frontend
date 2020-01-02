@@ -27,7 +27,12 @@ window.onload = ()=> {
     far.addEventListener("keyup",(e)=> {
         e.which = e.which || e.keyCode;
         if(e.which == 13) {
-        cel.value =(5/9)*(e.target.value-32);
+            let url = `https://acmgokulintro.herokuapp.com/api/tempConv?mode=fc&value=${e.target.value}`;
+            let settings = {
+               method: 'GET'
+            };
+            getConv(url,settings)
+            .then(data => cel.value = data.answer);
         }
     });
 };

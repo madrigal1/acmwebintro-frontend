@@ -3,11 +3,9 @@ window.onload = ()=> {
     let tempConv = document.getElementById("tempConv");
     let baseConv = document.getElementById("baseConv");
     let githubExp = document.getElementById("githubExp");
-
+   
     let contbg = "white";
-   const change  = (e) => {
-          console.log(e.target);
-   }
+   
 
    tempConv.addEventListener("mouseover",()=> {
   /*       container.style.backgroundColor = contbg; */
@@ -29,6 +27,9 @@ baseConv.addEventListener("mouseout",()=> {
 container.style ="background:#001AFF;";
 baseConv.style = "background:white;color:black";
 });
+baseConv.addEventListener("click",()=> {
+    location.href="baseConv.html";
+});
 
 githubExp.addEventListener("mouseover",()=> {
  /*    container.style.backgroundColor = contbg; */
@@ -38,6 +39,8 @@ githubExp.addEventListener("mouseout",()=> {
 container.style ="background:#001AFF;";
 githubExp.style = "background:white;color:black";
 });
+
+githubExp.addEventListener("click",()=>location.href="githubExp.html");
 
 
 

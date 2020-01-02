@@ -1,6 +1,10 @@
 window.onload = ()=> {
     let cel = document.querySelector("#cel input");
     let far = document.querySelector("#far input");
+    let logo = document.getElementById("logo");
+
+
+    logo.addEventListener("click",()=>location.href = "index.html");
 
    cel.addEventListener("keyup",(e)=> {
         e.which = e.which || e.keyCode;
@@ -11,7 +15,6 @@ window.onload = ()=> {
 
     far.addEventListener("keyup",(e)=> {
         e.which = e.which || e.keyCode;
-        console.log(cel.value);
         if(e.which == 13) {
         cel.value =(5/9)*(e.target.value-32);
         }

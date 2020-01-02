@@ -3,13 +3,23 @@ window.onload = ()=> {
     let far = document.querySelector("#far input");
     let logo = document.getElementById("logo");
 
+    const getConv = async (url,settings)=> {
+            const response = await fetch(url,settings);
+            const data = await response.json();
+            return data;
+    }
+
 
     logo.addEventListener("click",()=>location.href = "index.html");
 
    cel.addEventListener("keyup",(e)=> {
         e.which = e.which || e.keyCode;
         if(e.which == 13) {
-            far.value =(9/5)*e.target.value+32;
+            let url = `https://acmgokulintro.herokuapp.com/api/tempConv?mode=cf&value=${e.target.value}`;
+            let settings = {
+               method: 'GET'
+            };
+            far.value = getConv(url,settings);
         }
     });
 

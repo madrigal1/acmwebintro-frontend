@@ -11,8 +11,7 @@ window.onload =()=> {
     input.addEventListener("keyup",(e)=>{
         e.which = e.which | e.keyCode;
         if(e.which == 13) {
-            console.log("trigger");
-            let url = `https://api.github.com/users/${e.target.value}`;
+            let url = `https://acmgokulintro.herokuapp.com/api/githubExp/${e.target.value}`;
             let settings = {method:'GET'};
             getUserData(url,settings)
                 .then(data=>{

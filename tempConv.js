@@ -19,7 +19,8 @@ window.onload = ()=> {
             let settings = {
                method: 'GET'
             };
-            far.value = getConv(url,settings);
+            getConv(url,settings)
+            .then(data => far.value = data.answer);
         }
     });
 
